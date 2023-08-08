@@ -11,7 +11,9 @@ const ProtectedRoute = () => {
   return user && user.success ? (
     <div className="protected-rotue-container">
       <SideBar />
+      <div className="pl-20">
       <Outlet />
+      </div>
     </div>
   ) : (
     <Navigate to="/" replace state={{ from: location }} />

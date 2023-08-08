@@ -6,12 +6,19 @@
   box-sizing: border-box;
 }
 .signin-form-container {
-  button {
-    @include primary-button(white, rgb(58, 139, 58));
-    width: 100%;
 
+  // .btn-disable{
+  //   @include primary-button(white, rgb(119, 118, 118));
+  //   width: 100%;
+  //   cursor: not-allowed;
+  // }
+  
+  .btn-able{
+    @include primary-button(white, rgb(119, 118, 118));
+    width: 100%;
     &:hover {
-      @include primary-button(white, green);
+      @include primary-button(white, rgb(68, 160, 214));
+      cursor: pointer;
     }
   }
 }

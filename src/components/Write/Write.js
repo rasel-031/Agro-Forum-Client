@@ -112,7 +112,7 @@ const Write = () => {
               : "button-disabled"
           }
         >
-          Post
+          Publish
         </button>
       </form>
     </div>

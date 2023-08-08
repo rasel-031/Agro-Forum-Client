@@ -23,7 +23,11 @@ const SideBar = () => {
   };
 
   return (
-    <>
+    <OutsideClickHandler
+      onOutsideClick={() => {
+        setIsOpen(false);
+      }}
+    >
       <div className="sidebar-container">
         <img className="sidebar-logo" src={Logo} alt="logo" />
         <div className="sidebar-nav-link-box">
@@ -47,9 +51,9 @@ const SideBar = () => {
               <RiNotification2Line className="link-icon" />
             </Link>
           </div>
-          <div data-tip="Lists">
+          <div data-tip="Stories">
             <Link
-              to="lists"
+              to="stories"
               className={isActive === "lists" ? "link-active" : "link-inactive"}
               onClick={() => setIsActive("lists")}
             >
@@ -74,41 +78,35 @@ const SideBar = () => {
           className="sidebar-profile-pic"
           src={Profile}
           alt="profile"
-          onClick={() => setIsOpen(true)}
+          onClick={() => setIsOpen(!isOpen)}
         />
       </div>
 
       {/* profile card */}
       {isOpen && (
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setIsOpen(false);
-          }}
-        >
-          <div className="sidebar-profile-container">
-            <Link to="my-profile" className="profile-link">
-              My Profile
-            </Link>
-            <Link to="settings" className="profile-link">
-              Settings
-            </Link>
-            <Link to="" className="profile-link" onClick={handleLogout}>
-              Sign out
-            </Link>
-            <div className="profile-horizontal">
-              <hr />
-            </div>
-            <div className="profile-box">
-              <img src={Profile} alt="" className="profile-pic" />
-              <div className="profile-text">
-                <h5>Rasel Bishwas</h5>
-                <p>@raselbishwas</p>
-              </div>
+        <div className="sidebar-profile-container">
+          <Link to="my-profile" className="profile-link">
+            My Profile
+          </Link>
+          <Link to="settings" className="profile-link">
+            Settings
+          </Link>
+          <Link to="" className="profile-link" onClick={handleLogout}>
+            Sign out
+          </Link>
+          <div className="profile-horizontal">
+            <hr />
+          </div>
+          <div className="profile-box">
+            <img src={Profile} alt="" className="profile-pic" />
+            <div className="profile-text">
+              <h5>Rasel Bishwas</h5>
+              <p>@raselbishwas</p>
             </div>
           </div>
-        </OutsideClickHandler>
+        </div>
       )}
-    </>
+    </OutsideClickHandler>
   );
 };
 

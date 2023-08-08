@@ -100,7 +100,7 @@ const SignUp = () => {
                 <span>&nbsp;Show password</span>
               </div>
               <br />
-              <button type="submit">Sign Up</button>
+              <button type="submit" className="btn-able">Sign Up</button>
             </form>
           )}
         />

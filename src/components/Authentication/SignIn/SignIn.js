@@ -12,7 +12,6 @@ import { loginUserRequest } from "../../../redux/user/userActions";
 import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
-
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userData.login);
   const navigate = useNavigate();
@@ -20,9 +19,10 @@ const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (values) => {
+    console.log(values);
     dispatch(loginUserRequest(values));
   };
-  
+
   //navigate to protected page
   if (user && user.success) {
     navigate("/me");
@@ -47,7 +47,7 @@ const SignIn = () => {
                   <input
                     {...input}
                     type="text"
-                    className="input-field"
+                    className="input-field border-solid"
                     placeholder="Email"
                   />
                   {meta.error && meta.touched && (
@@ -85,7 +85,7 @@ const SignIn = () => {
               <span>&nbsp;Show password</span>
             </div>
             <br />
-            <button>Sign In</button>
+            <button className="btn-able">Sign In</button>
           </form>
         )}
       />

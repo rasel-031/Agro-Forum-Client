@@ -6,8 +6,8 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import Notifications from "./components/Notifications/Notifications";
-import Lists from "./components/Lists/Lists";
 import Write from "./components/Write/Write";
+import Stories from "./components/Stories/Stories";
 
 const App = () => {
   return (
@@ -17,13 +17,14 @@ const App = () => {
         <Routes>
           {/* Unprotected route with landing page */}
           <Route path="/" element={<NavigationBar />} />
-          
+
           {/* Protected route */}
           <Route path="/me" element={<ProtectedRoute />}>
             <Route index element={<Home />} />
             <Route path="notifications" element={<Notifications />} />
-            <Route path="lists" element={<Lists />} />
+            <Route path="stories" element={<Stories />} />
             <Route path="new-post" element={<Write />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
