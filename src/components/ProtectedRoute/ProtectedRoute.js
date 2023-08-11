@@ -9,7 +9,7 @@ const ProtectedRoute = () => {
   const user = useSelector((state) => state.userData.login);
 
   return user && user.success ? (
-    <div className="protected-rotue-container">
+    <div>
       <SideBar />
       <div className="pl-20">
       <Outlet />

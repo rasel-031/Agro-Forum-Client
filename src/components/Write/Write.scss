@@ -12,7 +12,9 @@
 .write-container {
   height: auto;
   @include flex-box(column, stretch, flex-start);
-  margin: 70px 150px 70px 230px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 3.5rem;
   width: 100%;
 
   .write-header {

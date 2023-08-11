@@ -56,7 +56,7 @@
   padding: 16px;
   @include flex-box(column, stretch, space-between);
   border-radius: 5px;
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   left: 10px;
   bottom: 98px;
